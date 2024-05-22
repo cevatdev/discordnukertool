@@ -180,15 +180,15 @@ const showLoadingScreen = () => {
 
 const main = async () => {
     try {
-        console.clear(); // Konsolu temizle
+        console.clear(); 
 
-        // Şeffaflığı kontrol et ve ayarla
-        if (process.stdout.isTTY) { // Terminal ise
+        
+        if (process.stdout.isTTY) { 
             try {
-                // Node.js'in `process` modülünü kullanarak terminal arka planını şeffaf yapmaya çalış
-                process.stdout.write('\x1b[48;2;0;0;0m'); // Siyah arka plan, 80% alfa
+                
+                process.stdout.write('\x1b[48;2;0;0;0m'); 
             } catch (error) {
-                // Terminal arka planını şeffaf yapma desteklenmiyorsa, hata mesajı gösterme
+               
             }
         }
 
