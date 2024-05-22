@@ -4,7 +4,8 @@ PLEASE STAR GİTHUB
 🚀 Gabimaru Tarafından Geliştirilen En İyi Komut Paneli Aracı 🚀
 
 Discord Sunucunuzu Geliştirmek İçin Güçlü Bir Araç!
-![image](https://github.com/cevatdev/discordnukertool/assets/164677184/5ad42389-0717-4ac1-8850-3af77a767937)
+![image](https://github.com/cevatdev/discordnukertool/assets/164677184/3a9d216b-3a8f-4fad-9ddf-9ebfa484cbec)
+
 
 
 🔥 Özellikler:
