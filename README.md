@@ -2,7 +2,8 @@
 🚀 Gabimaru Tarafından Geliştirilen En İyi Komut Paneli Aracı (Video Yayınlandıktan Sonra Paylaşılacaktır) 🚀
 
 Discord Sunucunuzu Geliştirmek İçin Güçlü Bir Araç!
-[https://github.com/cevatdev/discordnukertool/assets/164677184/7f8044c4-008a-4f73-8c2c-d833fa9595f4](https://github.com/cevatdev/discordnukertool/assets/164677184/7f8044c4-008a-4f73-8c2c-d833fa9595f4)
+![image](https://github.com/cevatdev/discordnukertool/assets/164677184/5ad42389-0717-4ac1-8850-3af77a767937)
+
 
 🔥 Özellikler:
 
