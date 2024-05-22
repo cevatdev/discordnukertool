@@ -54,7 +54,7 @@ const showCredits = () => {
     console.log(`
     \x1b[32m
     Gabimaru tarafından yapılmıştır gabimaru#0000
-    \x1b[0m`); // Reset color
+    \x1b[0m`); 
 };
 
 
@@ -81,33 +81,33 @@ const showAsciiArt = () => {
 
 const showMenu = async (language) => {
     console.log(language === 'tr' ? `
-        1.  Kanalları Toplu Oluştur
-        2.  Kanalları Toplu Oluştur ve Herkesi Etiketle
-        3.  Rolleri Toplu Oluştur
-        4.  Tüm Kanalları Sil
-        5.  Tüm Rolleri Sil
-        6.  Tüm Emojileri Sil
-        7.  Tüm Üyeleri Banla
-        8.  Tüm Üyeleri At
-        9.  Tüm Stickerları Sil
-        10. Server Patlatıcı
-        11. Sunucu İsmini Değiştir
-        12. Sunucu Resmini Değiştir
+        1.  Kanalları Toplu Oluştur [Aktif]
+        2.  Kanalları Toplu Oluştur ve Herkesi Etiketle [Aktif]
+        3.  Rolleri Toplu Oluştur [Aktif]
+        4.  Tüm Kanalları Sil [Aktif]
+        5.  Tüm Rolleri Sil [Aktif]
+        6.  Tüm Emojileri Sil [Soon Deleted]
+        7.  Tüm Üyeleri Banla [Cooming Soon]
+        8.  Tüm Üyeleri At [Cooming Soon]
+        9.  Tüm Stickerları Sil [Soon Deleted]
+        10. Server Patlatıcı [Aktif]
+        11. Sunucu İsmini Değiştir [Aktif]
+        12. Sunucu Resmini Değiştir [Aktif]
         13. Çıkış
         99. Kredi
     ` : `
-        1.  Mass Create Channels
-        2.  Mass Create Channels & Ping
-        3.  Mass Create Roles
-        4.  Delete All Channels
-        5.  Delete All Roles
-        6.  Delete All Emojis
-        7.  Ban All Members
-        8.  Kick All Members
-        9.  Delete All Stickers
-        10. Server Boom
-        11. Change Server Name
-        12. Change Server Icon
+        1.  Mass Create Channels [Active]
+        2.  Mass Create Channels & Ping [Active]
+        3.  Mass Create Roles [Active]
+        4.  Delete All Channels [Active]
+        5.  Delete All Roles [Active]
+        6.  Delete All Emojis [Soon Deleted]
+        7.  Ban All Members [Cooming Soon]
+        8.  Kick All Members [Cooming Soon]
+        9.  Delete All Stickers [Soon Deleted]
+        10. Server Boom [Active]
+        11. Change Server Name [Active]
+        12. Change Server Icon [Active]
         13. Exit
         99. Credits
     `);
@@ -120,55 +120,80 @@ const showLoadingScreen = () => {
     console.clear();
 
     
-    console.log(`\x1b[37m\n
-    Developed by gabimaru
-    \x1b[0m`);
+    const text = "Developed by gabimaru";
+    const colors = [
+        "\x1b[38;2;0;123;255m",   
+        "\x1b[38;2;0;255;255m",  
+        "\x1b[38;2;0;255;123m",   
+        "\x1b[38;2;123;0;255m"    
+    ];
 
-    
     const animationChars = ['-', '\\', '|', '/'];
     let animationIndex = 0;
-
-    
     let progress = 0;
     const progressBarLength = 20;
 
-    return new Promise((resolve) => { 
+    let textIndex = 0;
+
+    return new Promise((resolve) => {
         const loadingInterval = setInterval(() => {
             
-            process.stdout.write(`\r[${"#".repeat(progress)}${" ".repeat(progressBarLength - progress)}] ${animationChars[animationIndex++]}`);
-            animationIndex %= animationChars.length;
-
-           
-            progress++;
+            process.stdout.write(`\r\x1b[38;2;102;51;153m[\x1b[38;2;255;0;255m${"#".repeat(progress)}${" ".repeat(progressBarLength - progress)}\x1b[38;2;102;51;153m]`);
 
             
-            if (progress > progressBarLength || Date.now() - startTime >= 5000) {
+            process.stdout.write(` ${colors[textIndex % colors.length]}${text.slice(0, textIndex)}\x1b[0m${text.slice(textIndex)}`);
+
+            animationIndex %= animationChars.length;
+            progress++;
+            textIndex++;
+            if (textIndex > text.length) textIndex = 0; 
+
+            if (progress > progressBarLength) {
                 clearInterval(loadingInterval);
-                process.stdout.write("\r[####################] Done!  \n");
+                
+                
+                const pressEnterText = "Press Enter key to continue...";
+                let pressEnterTextIndex = 0;
+                const pressEnterInterval = setInterval(() => {
+                    process.stdout.write(`\r\x1b[38;2;102;51;153m[\x1b[38;2;255;0;255m####################\x1b[38;2;102;51;153m] \x1b[0m${colors[pressEnterTextIndex % colors.length]}${pressEnterText.slice(0, pressEnterTextIndex)}\x1b[0m${pressEnterText.slice(pressEnterTextIndex)}   `);
+                    pressEnterTextIndex++;
+                    if (pressEnterTextIndex > pressEnterText.length) pressEnterTextIndex = 0;
+                }, 100); 
+
                 readline.cursorTo(process.stdout, 0);
-                process.stdin.setRawMode(false);
-                process.stdin.removeAllListeners('keypress'); 
-                resolve(); 
-            }
-        }, 200);
 
-        const startTime = Date.now();
-
-        readline.emitKeypressEvents(process.stdin);
-        process.stdin.on('keypress', (_, key) => {
-            if (key.name === 'return') {
-                clearInterval(loadingInterval); 
-                resolve();
+                readline.emitKeypressEvents(process.stdin);
+                process.stdin.on('keypress', (_, key) => {
+                    if (key.name === 'return') {
+                        clearInterval(pressEnterInterval); 
+                        process.stdin.setRawMode(false);
+                        process.stdin.removeAllListeners('keypress');
+                        resolve();
+                    }
+                });
+                process.stdin.setRawMode(true);
             }
-        });
-        process.stdin.setRawMode(true);
+        }, 100); 
     });
 };
 
 
 const main = async () => {
     try {
-        await showLoadingScreen(); 
+        console.clear(); // Konsolu temizle
+
+        // Şeffaflığı kontrol et ve ayarla
+        if (process.stdout.isTTY) { // Terminal ise
+            try {
+                // Node.js'in `process` modülünü kullanarak terminal arka planını şeffaf yapmaya çalış
+                process.stdout.write('\x1b[48;2;0;0;0m'); // Siyah arka plan, 80% alfa
+            } catch (error) {
+                // Terminal arka planını şeffaf yapma desteklenmiyorsa, hata mesajı gösterme
+            }
+        }
+
+        await showLoadingScreen();
+
 
         const language = await chooseLanguage();
         const TOKEN = await getToken();

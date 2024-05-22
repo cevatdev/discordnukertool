@@ -1,0 +1,2 @@
+1. config.json gir discord botunun tokenini gir 
+2. start.batı aç
