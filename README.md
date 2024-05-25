@@ -16,4 +16,4 @@ Güvenli ve Stabil: Sunucunuzun güvenliğini ve kararlılığını sağlamak i�
 Sürekli Gelişim: Gabimaru, aracı sürekli olarak güncelleyerek yeni özellikler ve iyileştirmeler ekliyor.
 Topluluk Desteği: Discord sunucumuzda diğer kullanıcılarla etkileşim kurabilir, yardım alabilir ve önerilerde bulunabilirsiniz.
 Ücretsiz ve Açık Kaynak: Gabimaru'nun aracı herkesin kullanımına açık ve tamamen ücretsizdir.
-🔗 Discord Sunucumuza Katılın: https://discord.gg/client
+🔗 Discord Sunucumuza Katılın: https://discord.gg/client & geliştirici sw:https://discord.gg/ZEagKFQpU2
