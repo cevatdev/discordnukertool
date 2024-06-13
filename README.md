@@ -3,7 +3,7 @@ PLEASE STAR GİTHUB
 🚀 Gabimaru Tarafından Geliştirilen En İyi Komut Paneli Aracı 🚀
 
 Discord Sunucu Patlatma Aracı 
-![image](https://github.com/cevatdev/discordnukertool/assets/164677184/3a9d216b-3a8f-4fad-9ddf-9ebfa484cbec)
+![image](https://github.com/cevatdev/discordnukertool/assets/164677184/3298aad2-b680-4138-8a2f-8911dcac0f78)
 
 Gereksimler:
 Node 20 version lts version
