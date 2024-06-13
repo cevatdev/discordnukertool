@@ -8,8 +8,6 @@ Discord Sunucu Patlatma Aracı
 Version 3.5
 
 Tr:
-![image](https://github.com/cevatdev/discordnukertool/assets/164677184/68c4b9c4-892f-475e-96cc-1e26615a7c36)
-![image](https://github.com/cevatdev/discordnukertool/assets/164677184/289feb23-c80a-4091-ad18-91f27ecf6860)
 ![image](https://github.com/cevatdev/discordnukertool/assets/164677184/3298aad2-b680-4138-8a2f-8911dcac0f78)
 
 En:
