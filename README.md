@@ -5,6 +5,13 @@ PLEASE STAR GİTHUB
 Discord Sunucu Patlatma Aracı 
 ![image](https://github.com/cevatdev/discordnukertool/assets/164677184/3a9d216b-3a8f-4fad-9ddf-9ebfa484cbec)
 
+Gereksimler:
+Node 20 version lts version
+'npm install discord.js'
+'npm install readline'
+'npm install fs'
+start.bat basın bukadar basit eğer program coküyorsa config.jsonu silisin token sorucak token patladıysa program hata verebilir
+
 Version 3.5
 
 Tr:
